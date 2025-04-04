@@ -1,0 +1,39 @@
+<section class="w-full h-[calc(100vh-4rem)] flex flex-col md:flex-row items-center justify-between px-6 md:px-16 bg-black text-white">
+    <!-- Left: Text and Buttons -->
+    <div class="max-w-lg space-y-6">
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+        House Rendering
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300">
+        Transform your house plans into stunning 3D visuals. We offer high-quality rendering services for architects, builders, and homeowners.
+      </p>
+      <div class="flex gap-4">
+        <button class="px-6 py-3 bg-red-500 text-white rounded-full hover:bg-red-600 transition" (click)="getStarted()">
+          Get Started
+        </button>
+        <button class="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-gray-900 transition">
+          Watch Video
+        </button>
+      </div>
+    </div>
+
+    <!-- Right: Illustration -->
+    <div class="mt-8 md:mt-0">
+      <img src="https://th.bing.com/th/id/R.e273d9c6132db0e6a84b6849cff9e38e?rik=sjzPd6hBlwzChA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fhouse-png-house-png-2880.png&ehk=FlkJwr8rhSYf18N3CU9Cvp75o2ag3Kfjdio4tUqi94A%3d&risl=&pid=ImgRaw&r=0" alt="House Rendering Illustration" class="w-full max-w-xxl">
+    </div>
+  </section>
+
+  <!-- card Section -->
+   <section class="py-16 px-6 md:px-16 bg-black text-white">
+    <h2 class="text-4xl font-bold text-center mb-12">Our Service</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <app-card
+        *ngFor="let card of cards"
+        [iconClass]="card.iconClass"
+        [title]="card.title"
+        [description]="card.description"
+        [bgColor]="card.bgColor"
+      >
+      </app-card>
+    </div>
+   </section>

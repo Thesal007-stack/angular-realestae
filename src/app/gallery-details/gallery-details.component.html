@@ -1,0 +1,66 @@
+<div *ngIf="property" class="w-full h-[92vh] flex mt-2 md:h-[87vh] bg-white shadow-xl rounded-lg overflow-hidden">
+  <!-- Left Side: Full-Height Image with Overlay -->
+  <div class="w-1/2 h-full relative">
+    <img [src]="property.image" alt="House" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent"></div>
+    <!-- Back Button -->
+    <button 
+      (click)="goBack()" 
+      class="absolute top-4 left-4 bg-white text-gray-700 px-3 py-1 rounded-lg shadow-md hover:bg-gray-200 transition">
+      ⬅ Back
+    </button>
+  </div>
+
+  <!-- Right Side: Description -->
+  <div class="w-1/2 p-8 flex flex-col justify-between">
+    <!-- Price Tag -->
+    <div class="bg-purple-600 text-white px-6 py-3 rounded-lg text-lg font-semibold w-fit shadow-md">
+      {{ property.price }}
+    </div>
+
+    <!-- Address & Location -->
+    <div class="mt-4">
+      <div class="flex items-center gap-2 text-gray-800 text-2xl font-bold">
+        <span class="text-purple-600">📍</span> 
+        <h2>{{ property.address }}</h2>
+      </div>
+      <div class="flex items-center gap-2 text-gray-500 text-lg mt-1">
+        <span class="text-blue-500">🌍</span> 
+        <p>{{ property.location }}</p>
+      </div>
+    </div>
+
+    <!-- Property Stats -->
+    <div class="mt-6 grid grid-cols-3 gap-6 text-center">
+      <div class="p-4 bg-gray-100 rounded-lg shadow">
+        <span class="text-3xl">🛏</span>
+        <p class="text-gray-700 font-semibold">{{ property.beds }} Bed</p>
+      </div>
+      <div class="p-4 bg-gray-100 rounded-lg shadow">
+        <span class="text-3xl">🛁</span>
+        <p class="text-gray-700 font-semibold">{{ property.baths }} Bath</p>
+      </div>
+      <div class="p-4 bg-gray-100 rounded-lg shadow">
+        <span class="text-3xl">📏</span>
+        <p class="text-gray-700 font-semibold">{{ property.area }} sqft</p>
+      </div>
+    </div>
+
+    <!-- Real Estate Agent Info -->
+    <div class="mt-6 p-4 bg-gray-50 rounded-lg shadow flex items-center">
+      <img src="https://icons.veryicon.com/png/o/food--drinks/daily-use-book-stickers/meow-cat-1.png" alt="Agent" class="w-14 h-14 rounded-full object-cover border-2 border-purple-600">
+      <div class="ml-4">
+        <p class="text-lg font-semibold text-gray-800">John Doe</p>
+        <p class="text-gray-500 text-sm">Real Estate Agent</p>
+      </div>
+      <button class="ml-auto bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700">
+        Call 📞
+      </button>
+    </div>
+
+    <!-- Contact Seller Button -->
+    <button (click)="gotoContact()" class="mt-8 w-full bg-purple-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-purple-700 transition">
+      Contact Seller
+    </button>
+  </div>
+</div>
